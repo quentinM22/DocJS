@@ -1,0 +1,36 @@
+section {
+	padding: 20px;
+	margin: 5px 0 5px;
+	border: 1px solid #1d1e20;
+	background-color: whitesmoke;
+	border-radius: 10px;
+	h2 {
+		margin-bottom: 5px;
+		color: coral;
+	}
+	.alert {
+		color: red;
+	}
+	code {
+		ul {
+			margin: 5px 0 5px;
+			background-color: #1d1e20;
+			color: whitesmoke;
+			padding: 10px;
+			li {
+				.var {
+					color: lightseagreen;
+				}
+				.numb {
+					color: lightgreen;
+				}
+				.string {
+					color: lightsalmon;
+				}
+				ul.log {
+					color: darkgreen;
+				}
+			}
+		}
+	}
+}

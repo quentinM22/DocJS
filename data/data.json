@@ -1,0 +1,234 @@
+[
+	{
+		"BASE": [
+			{
+				"titre": "Variables",
+				"Alert": "!!! Ne plus utiliser 'var' celui-ci a un comportement particulier, il peut créer des erreurs dans le code.( il remonte dans le haut du script et peut etre modifier partout)",
+				"bloc": [
+					{
+						"desc": "Déclaration variable 'let'",
+						"codeJS": [
+							"<span class='var'>let </span>age = <span class='numb'>19 </span>",
+							"console.log(age)",
+							"age = <span class='numb'>20</span>",
+							"console.log(age)"
+						],
+						"consLog": ["19", "20"]
+					},
+					{
+						"desc": "Déclaration constante 'const'",
+						"codeJS": [
+							"<span class='var'>const </span>pi = <span class='numb'>3.14</span>",
+							"console.log(pi) "
+						],
+						"consLog": ["3.14"]
+					}
+				]
+			},
+			{
+				"titre": "Concaténation",
+				"Alert": "",
+				"bloc": [
+					{
+						"desc": "Concaténation de base",
+						"codeJS": [
+							"<span class='var'>const</span> prenom = <span class='string'>'toto'</span>",
+							"console.log('Bonjour' +' ' + toto)"
+						],
+						"consLog": ["Bonjour toto"]
+					},
+					{
+						"desc": "Concaténation backtick (à privilégier)",
+						"codeJS": [
+							"<span class='var'>const</span> prenom = <span class='string'>'toto'</span>",
+							"console.log(`Bonjour ${prenom}`)"
+						],
+						"consLog": ["Bonjour toto"]
+					}
+				]
+			},
+			{
+				"titre": "Opérateur arithmétique",
+				"Alert": "",
+				"bloc": [
+					{
+						"desc": "Addition '+' .",
+						"codeJS": [
+							"<span class='var'>let</span> age = <span class='numb'>19</span>",
+							"console.log(age = age + 1)"
+						],
+						"consLog": ["20"]
+					},
+					{
+						"desc": "Addition '+=' valeur",
+						"codeJS": [
+							"<span class='var'>let</span> age = <span class='numb'>19</span>",
+							"console.log(age += 1)"
+						],
+						"consLog": ["20"]
+					},
+					{
+						"desc": "Addition '++' (+1)",
+						"codeJS": [
+							"<span class='var'>let</span> age = <span class='numb'>19</span>",
+							"console.log(age++)"
+						],
+						"consLog": ["20"]
+					},
+					{
+						"desc": "Soustraction '-' valeur",
+						"codeJS": [
+							"<span class='var'>let</span> age = <span class='numb'>19</span>",
+							"console.log(age = age - 1)"
+						],
+						"consLog": ["18"]
+					},
+					{
+						"desc": "Soustraction '-=' valeur",
+						"codeJS": [
+							"<span class='var'>let</span> age = <span class='numb'>19</span>",
+							"console.log(age -= 1)"
+						],
+						"consLog": ["18"]
+					},
+					{
+						"desc": "Soustraction '--'",
+						"codeJS": [
+							"<span class='var'>let</span> age = <span class='numb'>19</span>",
+							"console.log(age--)"
+						],
+						"consLog": ["18"]
+					},
+					{
+						"desc": "Multiplication '*' valeur",
+						"codeJS": [
+							"<span class='var'>let</span> age = <span class='numb'>19</span>",
+							"console.log(age * 2)"
+						],
+						"consLog": ["38"]
+					},
+					{
+						"desc": "Division '/' valeur",
+						"codeJS": [
+							"<span class='var'>let</span> age = <span class='numb'>19</span>",
+							"console.log(age / 2)"
+						],
+						"consLog": ["9.5"]
+					},
+					{
+						"desc": "Module (reste de la division) '%' valeur",
+						"codeJS": [
+							"<span class='var'>let</span> age = <span class='numb'>19</span>",
+							"console.log(age % 2)"
+						],
+						"consLog": ["1"]
+					},
+					{
+						"desc": "Puissance '**' valeur ",
+						"codeJS": [
+							"<span class='var'>let</span> number = <span class='numb'>5</span>",
+							"console.log(number**2)"
+						],
+						"consLog": ["25"]
+					}
+				]
+			},
+			{
+				"titre": "Opérateur comparaison",
+				"Alert": "",
+				"bloc": [
+					{
+						"desc": "Egal '==' (à éviter car ne prend pas en compte le type) ",
+						"codeJS": ["console.log(1 == '1')"],
+						"consLog": ["True"]
+					},
+					{
+						"desc": "Non Egal '!=' (à éviter car ne prend pas en compte le type) ",
+						"codeJS": ["console.log(1 != '1')"],
+						"consLog": ["False "]
+					},
+					{
+						"desc": "Egal strict '===' (prend en compte valeur et type)",
+						"codeJS": ["console.log(1 === '1')", "console.log(1 === 1)"],
+						"consLog": ["False", "True"]
+					},
+					{
+						"desc": "Non Egal strict '!==' (prend en compte valeur et type)",
+						"codeJS": ["console.log(1 !== '1') ", "console.log(1 !== 1) "],
+						"consLog": ["True", "False"]
+					},
+					{
+						"desc": "Inférieur '<'",
+						"codeJS": ["console.log(1 < 2)"],
+						"consLog": ["True"]
+					},
+					{
+						"desc": "Inférieur ou égale '<='",
+						"codeJS": ["console.log(2 <= 2) "],
+						"consLog": ["True"]
+					},
+					{
+						"desc": "Supérieur '>'",
+						"codeJS": ["console.log(2 > 1) "],
+						"consLog": ["True"]
+					},
+					{
+						"desc": "Spérieur ou égale '>='",
+						"codeJS": ["console.log(2 >= 1)"],
+						"consLog": ["True"]
+					}
+				]
+			},
+			{
+				"titre": "Opérateur logique",
+				"Alert": "",
+				"bloc": [
+					{
+						"desc": "Et logique '&&'",
+						"codeJS": [
+							"<span class='var'>let </span>age = <span class='numb'>19</span>",
+							"<span class='var'>let</span> resultat ",
+							"age < 18  <span class='operator'>&&</span> age > 12  ? resultat = 'ado' : resultat = 'non ado'",
+							"console.log(resultat) "
+						],
+						"consLog": ["non ado"]
+					},
+					{
+						"desc": "Ou logique '||'",
+						"codeJS": [
+							"<span class='var'>let </span>age = <span class='numb'>19</span>",
+							"<span class='var'>let</span> resultat ",
+							"age >= 18  <span class='operator'>||</span> age === undefined  ? resultat = 'adulte' : resultat = 'mineur'",
+							"console.log(resultat) "
+						],
+						"consLog": ["adulte"]
+					}
+				]
+			},
+			{
+				"titre": "Fonctions",
+				"Alert": "!!! Jamais déclarer une fonction en 'let'... une fonction restera toujours une constante, cela peu provoqué une erreur ou même provoquer des faille de sécurité car on peu réafecter une variable 'let' même si on lui passe une fonction exemple let toto = () => {return 'toto} on obtient donc 'toto' si on déclare la fonction sauf que si je met toto = 5 et que je fais un console.log(toto, typeof(toto)) j'obtiens 5 et number ce n'est plus une fonction. (vous pouvez essayer dans la console du navigateur) ",
+				"bloc": [
+					{
+						"desc": "Déclaration Fonction 'normal'",
+						"codeJS": ["function nomDeLaFonction(params, ...){\n bloc code \n}"]
+					},
+					{
+						"desc": "Déclaration Fonction flèché (nouvelle méthode)",
+						"codeJS": [
+							"const nomDeLaFonction = (params, ...) => {\n bloc code \n}"
+						]
+					},
+					{
+						"desc": "Déclaration Fonction Anonyme 'normal'",
+						"codeJS": ["function(params, ...){\n bloc code \n}"]
+					},
+					{
+						"desc": "Déclaration Fonction Anonyme flèché",
+						"codeJS": [" (params, ...) => {\n bloc code \n}"]
+					}
+				]
+			}
+		]
+	}
+]
