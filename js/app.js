@@ -12,16 +12,13 @@ const app = document.querySelector("#app");
 
 header.innerHTML += headerHtml()
 sousNav.innerHTML += sousNavigation({data})
-app.innerHTML += sectionHtml({data})
+app.innerHTML += sectionHtml({data, key: 'BASE'})
+
 
 
 eventNav({sousNav, data})
-    .then( newData => {
-        newData = newData
-    })
     .catch( error =>{
         console.error(error)
     })
 
-console.log(newData);
 

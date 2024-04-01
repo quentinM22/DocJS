@@ -232,27 +232,547 @@
 		]
 	},
 	{
-		"BOM": []
+		"BOM": [
+			{
+				"titre": "Window",
+				"Alert": "Le Window object représente la fenêtre du navigateur. Il fournit plusieurs méthodes et propriétés pour manipuler la fenêtre actuelle.",
+				"bloc": [
+					{
+						"desc": "Propriété window.innerHeight",
+						"codeJS": [
+							"console.log(window.innerHeight);"
+						],
+						"consLog": ["(hauteur de la fenêtre en pixels)"]
+					},
+					{
+						"desc": "Méthode window.open()",
+						"codeJS": [
+							"window.open('https://www.example.com', '_blank');"
+						]
+					}
+				]
+			},
+			{
+				"titre": "Navigator",
+				"Alert": "Le Navigator object fournit des informations sur le navigateur du visiteur.",
+				"bloc": [
+					{
+						"desc": "Propriété navigator.userAgent",
+						"codeJS": [
+							"console.log(navigator.userAgent);"
+						],
+						"consLog": ["(contient des informations sur le navigateur de l'utilisateur)"]
+					},
+					{
+						"desc": "Propriété navigator.language",
+						"codeJS": [
+							"console.log(navigator.language);"
+						],
+						"consLog": ["(langue du navigateur de l'utilisateur)"]
+					}
+				]
+			}
+		]
 	},
 	{
-		"DOM": []
+		"DOM": [ {
+			"titre": "Document",
+			"Alert": "Le Document object représente la page HTML actuellement chargée dans le navigateur.",
+			"bloc": [
+				{
+					"desc": "Méthode document.querySelector()",
+					"codeJS": [
+						"const element = document.querySelector('.myClass');"
+					],
+					"consLog": ["(Sélectionne le premier élément correspondant à la classe spécifiée)"]
+				},
+				{
+					"desc": "Méthode document.querySelectorAll()",
+					"codeJS": [
+						"const elements = document.querySelectorAll('p');"
+					],
+					"consLog": ["(Sélectionne tous les éléments correspondant au sélecteur spécifié)"]
+				},
+				{
+					"desc": "Méthode document.createElement()",
+					"codeJS": [
+						"const newElement = document.createElement('div');"
+					],
+					"consLog": ["(Crée un nouvel élément HTML avec le nom de la balise spécifiée)"]
+				},
+				{
+					"desc": "Propriété document.body",
+					"codeJS": [
+						"const body = document.body;"
+					],
+					"consLog": ["(Récupère l'élément body du document)"]
+				}
+			]
+		},
+		{
+			"titre": "Element",
+			"Alert": "L'Element object représente un élément HTML sur une page web.",
+			"bloc": [
+				{
+					"desc": "Méthode element.setAttribute()",
+					"codeJS": [
+						"element.setAttribute('class', 'newClass');"
+					],
+					"consLog": ["(Définit la valeur d'un attribut sur l'élément spécifié)"]
+				},
+				{
+					"desc": "Méthode element.appendChild()",
+					"codeJS": [
+						"parentElement.appendChild(newElement);"
+					],
+					"consLog": ["(Ajoute un nœud à la fin de la liste des enfants d'un nœud parent spécifié)"]
+				},
+				{
+					"desc": "Propriété element.innerHTML",
+					"codeJS": [
+						"console.log(element.innerHTML);"
+					],
+					"consLog": ["(contenu HTML de l'élément)"]
+				},
+				{
+					"desc": "Méthode element.classList",
+					"codeJS": [
+						"element.classList.add('active');",
+						"element.classList.remove('inactive');"
+					],
+					"consLog": ["(Ajoute ou supprime une classe CSS de l'élément)"]
+				}
+			]
+		}]
 	},
 	{
-		"EVENEMENT": []
+		"EVENEMENT": [
+			{
+				"titre": "Écouter un événement",
+				"Alert": "L'écouteur d'événements permet de détecter quand un événement spécifique se produit sur un élément DOM.",
+				"bloc": [
+					{
+						"desc": "Méthode addEventListener()",
+						"codeJS": [
+							"const button = document.querySelector('button');",
+							"button.addEventListener('click', (event) => {",
+							"   console.log('Le bouton a été cliqué');",
+							"});"
+						],
+						"consLog": ["(Ajoute un écouteur d'événements à l'élément spécifié, qui exécute une fonction donnée lorsque l'événement se produit)"]
+					}
+				]
+			},
+			{
+				"titre": "Retirer un écouteur d'événements",
+				"Alert": "Il est important de retirer les écouteurs d'événements lorsqu'ils ne sont plus nécessaires pour éviter les fuites de mémoire.",
+				"bloc": [
+					{
+						"desc": "Méthode removeEventListener()",
+						"codeJS": [
+							"const button = document.querySelector('button');",
+							"const handleClick = (event) => {",
+							"   console.log('Le bouton a été cliqué');",
+							"};",
+							"button.addEventListener('click', handleClick);",
+							"// Plus tard, si vous souhaitez retirer l'écouteur d'événements",
+							"button.removeEventListener('click', handleClick);"
+						],
+						"consLog": ["(Retire un écouteur d'événements spécifié du même élément sur lequel il a été appelé)"]
+					}
+				]
+			},
+			{
+				"titre": "Événements d'entrée utilisateur",
+				"Alert": "Ces événements sont déclenchés en réponse à l'interaction de l'utilisateur avec l'interface utilisateur.",
+				"bloc": [
+					{
+						"desc": "Click",
+						"codeJS": [
+							"element.addEventListener('click', (event) => {",
+							"   console.log('Clic détecté');",
+							"});"
+						]
+					},
+					{
+						"desc": "Double click",
+						"codeJS": [
+							"element.addEventListener('dblclick', (event) => {",
+							"   console.log('Double clic détecté');",
+							"});"
+						]
+					},
+					{
+						"desc": "Survole de la souris",
+						"codeJS": [
+							"element.addEventListener('mouseover', (event) => {",
+							"   console.log('Souris survolée');",
+							"});"
+						]
+					},
+					{
+						"desc": "Changement de valeur dans un champ de texte",
+						"codeJS": [
+							"inputField.addEventListener('input', (event) => {",
+							"   console.log('Valeur changée');",
+							"});"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
-		"FETCH": []
+		"FETCH": [{
+			"titre": "Fetch API (ES6+)",
+			"Alert": "L'API Fetch est utilisée pour effectuer des requêtes réseau (comme AJAX). Elle fournit une interface JavaScript pour l'accès et la manipulation des parties de la pipeline HTTP, tels que les requêtes et les réponses.",
+			"bloc": [
+				{
+					"desc": "Effectuer une requête GET",
+					"codeJS": [
+						"fetch('https://api.example.com/data')",
+						"   .then(response => response.json())",
+						"   .then(data => console.log(data))",
+						"   .catch(error => console.error('Erreur :', error));"
+					],
+					"consLog": ["(Effectue une requête GET vers l'URL spécifiée)"]
+				},
+				{
+					"desc": "Effectuer une requête POST",
+					"codeJS": [
+						"fetch('https://api.example.com/saveData', {",
+						"   method: 'POST',",
+						"   body: JSON.stringify(data),",
+						"   headers: {",
+						"       'Content-Type': 'application/json'",
+						"   }",
+						"})",
+						"   .then(response => response.json())",
+						"   .then(data => console.log(data))",
+						"   .catch(error => console.error('Erreur :', error));"
+					]
+				}
+			]
+		},
+		{
+			"titre": "XMLHttpRequest (Ancienne version)",
+			"Alert": "XMLHttpRequest (XHR) est une API native JavaScript utilisée pour effectuer des requêtes HTTP vers un serveur web et d'obtenir des données d'un serveur web sans avoir à recharger la page entière. Elle est largement remplacée par Fetch API en raison de sa simplicité et de son utilisation des Promesses.",
+			"bloc": [
+				{
+					"desc": "Effectuer une requête GET",
+					"codeJS": [
+						"var xhr = new XMLHttpRequest();",
+						"xhr.open('GET', 'https://api.example.com/data', true);",
+						"xhr.onload = function() {",
+						"   if (xhr.status == 200) {",
+						"       console.log(xhr.responseText);",
+						"   } else {",
+						"       console.error('Erreur :', xhr.statusText);",
+						"   }",
+						"};",
+						"xhr.onerror = function() {",
+						"   console.error('Erreur réseau');",
+						"};",
+						"xhr.send();"
+					]
+				},
+				{
+					"desc": "Effectuer une requête POST",
+					"codeJS": [
+						"var xhr = new XMLHttpRequest();",
+						"xhr.open('POST', 'https://api.example.com/saveData', true);",
+						"xhr.setRequestHeader('Content-Type', 'application/json');",
+						"xhr.onload = function() {",
+						"   if (xhr.status == 200) {",
+						"       console.log(xhr.responseText);",
+						"   } else {",
+						"       console.error('Erreur :', xhr.statusText);",
+						"   }",
+						"};",
+						"xhr.onerror = function() {",
+						"   console.error('Erreur réseau');",
+						"};",
+						"xhr.send(JSON.stringify(data));"
+					]
+				}
+			]
+		}]
 	},
 	{
-		"POO": []
+		"POO": [
+			{
+				"titre": "Classes (ES6+)",
+				"Alert": "Les classes en JavaScript (ES6+) offrent un moyen plus clair et plus simple de créer des objets et de gérer l'héritage. Elles sont basées sur le prototypage sous-jacent, mais fournissent une syntaxe plus proche des langages de programmation orientés objet classiques.",
+				"bloc": [
+					{
+						"desc": "Déclaration d'une classe",
+						"codeJS": [
+							"class Personne {",
+							"   constructor(nom, age) {",
+							"       this.nom = nom;",
+							"       this.age = age;",
+							"   }",
+							"   afficherDetails() {",
+							"       console.log(`Nom: ${this.nom}, Age: ${this.age}`);",
+							"   }",
+							"}"
+						]
+					},
+					{
+						"desc": "Création d'une instance",
+						"codeJS": [
+							"let personne1 = new Personne('Alice', 30);",
+							"personne1.afficherDetails();"
+						]
+					}
+				]
+			},
+			{
+				"titre": "Héritage (ES6+)",
+				"Alert": "L'héritage en JavaScript (ES6+) permet à une classe (sous-classe) d'hériter des propriétés et méthodes d'une autre classe (superclasse). Cela permet de réutiliser du code et de créer des relations entre les objets.",
+				"bloc": [
+					{
+						"desc": "Déclaration d'une classe héritée",
+						"codeJS": [
+							"class Employe extends Personne {",
+							"   constructor(nom, age, poste) {",
+							"       super(nom, age);",
+							"       this.poste = poste;",
+							"   }",
+							"   afficherPoste() {",
+							"       console.log(`Poste: ${this.poste}`);",
+							"   }",
+							"}"
+						]
+					},
+					{
+						"desc": "Création d'une instance de classe héritée",
+						"codeJS": [
+							"let employe1 = new Employe('Bob', 25, 'Développeur');",
+							"employe1.afficherDetails();",
+							"employe1.afficherPoste();"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
-		"STOCKAGE_DONNEES": []
+		"STOCKAGE_DONNEES": [
+			{
+				"titre": "Local Storage",
+				"Alert": "Le localStorage permet de stocker des données de manière persistante dans le navigateur, même après sa fermeture.",
+				"bloc": [
+					{
+						"desc": "Stockage d'une donnée",
+						"codeJS": [
+							"localStorage.setItem('cle', 'valeur');"
+						]
+					},
+					{
+						"desc": "Récupération d'une donnée",
+						"codeJS": [
+							"let donnee = localStorage.getItem('cle');"
+						]
+					},
+					{
+						"desc": "Suppression d'une donnée",
+						"codeJS": [
+							"localStorage.removeItem('cle');"
+						]
+					},
+					{
+						"desc": "Effacement de toutes les données",
+						"codeJS": [
+							"localStorage.clear();"
+						]
+					}
+				]
+			},
+			{
+				"titre": "Session Storage",
+				"Alert": "Le sessionStorage stocke des données de manière similaire au localStorage, mais les données sont supprimées lorsque la session de navigation se termine.",
+				"bloc": [
+					{
+						"desc": "Stockage d'une donnée",
+						"codeJS": [
+							"sessionStorage.setItem('cle', 'valeur');"
+						]
+					},
+					{
+						"desc": "Récupération d'une donnée",
+						"codeJS": [
+							"let donnee = sessionStorage.getItem('cle');"
+						]
+					},
+					{
+						"desc": "Suppression d'une donnée",
+						"codeJS": [
+							"sessionStorage.removeItem('cle');"
+						]
+					},
+					{
+						"desc": "Effacement de toutes les données",
+						"codeJS": [
+							"sessionStorage.clear();"
+						]
+					}
+				]
+			},
+			{
+				"titre": "Cookies",
+				"Alert": "Les cookies sont de petits fichiers texte stockés dans le navigateur. Ils sont souvent utilisés pour stocker des informations telles que des préférences utilisateur ou des identifiants de session.",
+				"bloc": [
+					{
+						"desc": "Création d'un cookie",
+						"codeJS": [
+							"document.cookie = 'nom=valeur; expires=date; path=/';"
+						]
+					},
+					{
+						"desc": "Lecture d'un cookie",
+						"codeJS": [
+							"let cookies = document.cookie;"
+						]
+					},
+					{
+						"desc": "Suppression d'un cookie",
+						"codeJS": [
+							"document.cookie = 'nom=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
-		"FRAMEWORK_FRONT": []
+		"GESTION_DES_ERREURS": [
+			{
+				"titre": "Try...Catch",
+				"Alert": "L'instruction try...catch permet de gérer les erreurs dans le code JavaScript en permettant d'exécuter du code de secours si une erreur survient.",
+				"bloc": [
+					{
+						"desc": "Syntaxe",
+						"codeJS": [
+							"try {",
+							"   // Code susceptible de provoquer une erreur",
+							"} catch (erreur) {",
+							"   // Gestion de l'erreur",
+							"}"
+						]
+					},
+					{
+						"desc": "Exemple",
+						"codeJS": [
+							"try {",
+							"   let resultat = fonctionInexistante();",
+							"} catch (erreur) {",
+							"   console.error('Une erreur est survenue :', erreur);",
+							"}"
+						]
+					}
+				]
+			},
+			{
+				"titre": "Throw",
+				"Alert": "L'instruction throw permet de créer une exception personnalisée et de la lancer dans le code.",
+				"bloc": [
+					{
+						"desc": "Syntaxe",
+						"codeJS": [
+							"throw 'Message d'erreur';"
+						]
+					},
+					{
+						"desc": "Exemple",
+						"codeJS": [
+							"function fonctionAvecErreur() {",
+							"   throw 'Une erreur s'est produite';",
+							"}"
+						]
+					}
+				]
+			},
+			{
+				"titre": "Finally",
+				"Alert": "L'instruction finally permet d'exécuter du code après l'achèvement du bloc try...catch, quelle que soit l'issue (avec ou sans erreur).",
+				"bloc": [
+					{
+						"desc": "Syntaxe",
+						"codeJS": [
+							"try {",
+							"   // Code susceptible de provoquer une erreur",
+							"} catch (erreur) {",
+							"   // Gestion de l'erreur",
+							"} finally {",
+							"   // Code à exécuter dans tous les cas",
+							"}"
+						]
+					},
+					{
+						"desc": "Exemple",
+						"codeJS": [
+							"try {",
+							"   let resultat = fonctionInexistante();",
+							"} catch (erreur) {",
+							"   console.error('Une erreur est survenue :', erreur);",
+							"} finally {",
+							"   console.log('Fin de l'exécution du bloc try...catch.');",
+							"}"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
-		"FRAMEWORK_BACK": []
+		"FRAMEWORK_FRONT": [
+			{
+				"titre": "React.js",
+				"Alert": "React est une bibliothèque JavaScript open-source développée par Facebook pour construire des interfaces utilisateur, en particulier pour les applications à page unique. Il permet de créer des composants réutilisables et gère efficacement la mise à jour du DOM de manière optimisée grâce à son algorithme de réconciliation (Virtual DOM).",
+				"lien": "https://reactjs.org/"
+			},
+			{
+				"titre": "Angular",
+				"Alert": "Angular est un framework JavaScript open-source développé par Google. Il est largement utilisé pour la création d'applications web à page unique (SPA). Angular propose une architecture basée sur les composants et fournit un ensemble complet de fonctionnalités pour le développement front-end, y compris la liaison de données bidirectionnelle, l'injection de dépendances, la gestion des formulaires et la navigation.",
+				"lien": "https://angular.io/"
+			},
+			{
+				"titre": "Vue.js",
+				"Alert": "Vue.js est un framework JavaScript progressif pour la construction d'interfaces utilisateur. Contrairement à Angular et React, Vue est plus flexible et peut être utilisé de différentes manières, allant de la création de petites fonctionnalités interactives à la construction d'applications web à page unique complètes. Vue met l'accent sur la simplicité et la réactivité.",
+				"lien": "https://vuejs.org/"
+			},
+			{
+				"titre": "Svelte",
+				"Alert": "Svelte est un framework JavaScript qui se distingue des autres frameworks en compilant le code en code JavaScript optimisé lors de la phase de build. Cela signifie que Svelte n'utilise pas de Virtual DOM comme React ou Vue, ce qui peut entraîner des performances plus rapides. Svelte met l'accent sur la productivité des développeurs et la réactivité des applications.",
+				"lien": "https://svelte.dev/"
+			}
+		]
+	},
+	{
+		"FRAMEWORK_BACK": [
+			{
+				"titre": "Node.js",
+				"Alert": "Node.js est un environnement d'exécution JavaScript côté serveur qui utilise le moteur JavaScript V8 de Google Chrome. Il permet d'exécuter du code JavaScript côté serveur, ce qui était auparavant limité au navigateur. Node.js est largement utilisé pour créer des applications web, des API RESTful, des serveurs WebSocket et bien plus encore.",
+				"lien": "https://nodejs.org/"
+			},
+			{
+				"titre": "Express.js",
+				"Alert": "Express.js est un framework web minimaliste et flexible pour Node.js. Il offre un ensemble de fonctionnalités robuste pour créer des applications web et des API de manière rapide et efficace. Express simplifie la gestion des routes, des requêtes HTTP, des réponses et des middlewares, ce qui en fait un choix populaire pour le développement back-end.",
+				"lien": "https://expressjs.com/",
+				"bloc": [
+					{
+						"desc": "Créer un serveur Express",
+						"codeJS": [
+							"const express = require('express');",
+							"const app = express();",
+							"const port = 3000;",
+							"app.get('/', (req, res) => res.send('Bonjour Express!'));",
+							"app.listen(port, () => console.log(`Serveur Express écoutant sur le port ${port}!`));"
+						]
+					}
+				]
+			}
+		]
 	}
 ]
