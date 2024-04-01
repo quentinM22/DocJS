@@ -1,7 +1,7 @@
 export const fetchData = async () => {
-    console.log(window.location.href);
+const url = 'https://quentinm22.github.io/DocJS/data/data.json'
     try {
-        const res = await fetch(`./data/data.json` );
+        const res = await fetch(url);
         if (!res.ok) {
             throw new Error('La réponse du réseau n\'est pas valide');
         }
