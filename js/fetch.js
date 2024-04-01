@@ -1,5 +1,13 @@
-export const fetchData = async() => {
-    const res = await fetch('../data/data.json')
-    const data = await res.json()
-    return data
-}
+export const fetchData = async () => {
+    try {
+        const res = await fetch('../data/data.json');
+        if (!res.ok) {
+            throw new Error('La réponse du réseau n\'est pas valide');
+        }
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des données :', error);
+        throw error; 
+    }
+};
