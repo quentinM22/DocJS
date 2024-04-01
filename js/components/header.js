@@ -1,23 +1,25 @@
-
 export const headerHtml = () => {
-    const header = document.querySelector('header')
-
     const headerContent = `
     <h1 class="grid-item-3">Doc.</h1>
-    <!-- <nav class="grid-item-9 grid">
-        <ul class="grid">
-          <li>
-            <div>Js<i class="fa-solid fa-chevron-down"></i><hr/></div>
-            <ul class="active">
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-            </ul>
-          </li>
-          <li>test<hr/></li>
-          <li>test<hr/></li>
-        </ul>
-      </nav> -->
     `
-    header.innerHTML += headerContent
+    return headerContent
+}
+
+export const sousNavigation = ({data}) => {
+    const onglet = []
+
+data.forEach(e => {
+    Object.keys(e).forEach(key => {
+       onglet.push(key) 
+    })
+    
+});
+   const sousNavHtml = `
+   <ul class='grid'>
+   ${onglet.map(e => 
+    `<li id="${e}" class='grid-item-2'>${e.replace("_", ' ')}</li>`
+   ).join("")}
+   </ul>
+   ` 
+   return sousNavHtml
 }

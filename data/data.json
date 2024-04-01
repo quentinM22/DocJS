@@ -40,7 +40,7 @@
 					{
 						"desc": "Concaténation backtick (à privilégier)",
 						"codeJS": [
-							"<span class='var'>const</span> prenom = <span class='string'>'toto'</span>",
+							"<<span class='var'>const</span> prenom = <span class='string'>'toto'</span>",
 							"console.log(`Bonjour ${prenom}`)"
 						],
 						"consLog": ["Bonjour toto"]
@@ -230,5 +230,29 @@
 				]
 			}
 		]
+	},
+	{
+		"BOM": []
+	},
+	{
+		"DOM": []
+	},
+	{
+		"EVENEMENT": []
+	},
+	{
+		"FETCH": []
+	},
+	{
+		"POO": []
+	},
+	{
+		"STOCKAGE_DONNEES": []
+	},
+	{
+		"FRAMEWORK_FRONT": []
+	},
+	{
+		"FRAMEWORK_BACK": []
 	}
 ]
